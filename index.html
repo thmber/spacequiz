@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Space Quiz</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="icon/earth_icon.jpg">
+    <script src="script.js"></script>
+    <script src="data.js"></script>
+</head>
+
+
+<body onload="show('start')">
+
+
+    <div class="main">
+        <div class="main-subcontainer" id="main-sub">
+            <div class="spaceship-bar">
+                <div class="spaceship-traveled" id="traveled">
+                </div>
+                <div class="spaceship" id="spaceship">
+                    <img src="icon/spaceship.png" id="intact" alt="">
+                    <img class="spaceship-fire" id="fire" src="icon/spaceship-fire.png" alt="">
+                    <div class="explosion invisible" id="explosion">
+                        <img class="explosion-image" id="explosion-image" src="icon/explosion_small.png" alt="">
+                    </div>
+                </div>
+            </div>
+
+            <div class="card" id="card">
+                    <div class="card-image">
+                        <img src="img/earth.jpg" alt="">
+                    </div>
+                    <div id="card-content" class="card-content">
+                    </div>
+            </div>
+        </div>
+
+<!--- -------------------------- Start Screen ----------------------------------- -->
+        <div id="start" class="start" onclick="startGame()">
+            <div id="start-text" class="start-text">
+                <h1>Space Quiz</h1>
+                <h2>Answer all questions to return home!</h2>
+                <div class="attributes" id="attributes">
+                    <a href="https://www.flaticon.com/free-icons/spaceship" title="spaceship icons">Spaceship icons created by DinosoftLabs - Flaticon</a>
+                </div>
+            </div>
+        </div>
+
+<!--- -------------------------- End Screen if game is lost -------------- -->
+        <div id="lost" class="lost" onclick="playAgain('lost')">
+            <div id="lost-text" class="lost-text">
+                Lost in Space
+            </div>
+        </div>
+
+ <!--- -------------------------- End Screen if game is won -------------- -->    
+        <div id="won" class="won">
+            <div id="won-text" class="won-text">
+                you made it home
+                <button onclick="playAgain('won')">Play again</button>
+            </div>
+        </div>
+
+
+    </div>
+
+</body>
+
+</html>

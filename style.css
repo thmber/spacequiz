@@ -1,0 +1,337 @@
+body{
+    background-image: url(img/bg1.jpg);
+    background-size: cover;
+    min-height: 100vh;
+    font-family: space;
+}
+.main{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    height: 100%;
+    flex-direction: column;
+   
+}
+h1{
+    color: white;
+    text-align: center;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    font-size: 90px;
+}
+h2{
+    margin-top: 15px;
+    margin-bottom: 15px;
+    color: white;
+    text-align: center;
+    font-size: 22px;
+}
+h4{
+    text-decoration: underline;
+}
+@font-face {
+    font-family: roboto;
+    src: url(fonts/roboto-mono-v22-latin-regular.woff2);
+}
+@font-face {
+    font-family: space;
+    src: url(fonts/space-mono-v12-latin-regular.woff2);
+}
+.main-subcontainer{
+    display: flex;
+    align-items: flex-end;
+    margin-top: 70px;
+}
+.start{
+    display: none;
+    position: fixed;
+    bottom: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-image: url(img/bg1.jpg);
+    background-size: cover;
+    cursor: pointer;
+}
+.start-text{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    flex-direction: column;
+    font-size: 70px;
+    color: white;
+}
+h4{
+    padding: 5px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+.card{
+    background-color: white;
+    width: 450px;
+    height: 550px;
+    border-radius: 10px;
+    background-color: rgba(129, 220, 251, 0.8);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.card-image{
+    width: 100%;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    overflow: hidden;
+    object-fit: cover;
+
+}
+.card-image img{
+    width: 100%;
+}
+.card-footer{
+    display: flex;
+    width: 400px;
+    align-items: center;
+    justify-content: space-between;
+    margin: 5px;
+    padding: 5px;
+    margin-top: 15px;
+
+}
+.answer-button{
+    width: 390px;
+    padding: 5px;
+    margin: 5px;
+    margin-bottom: 10px;
+    border: 1px solid darkblue;
+    border-radius: 3px;
+    cursor: pointer;
+    text-align: center;
+}
+.answer-button:hover{
+    background-color: rgba(25, 25, 100, 0.2);
+}
+.right-answer{
+    background-color: rgb(3, 224, 3) !important;
+}
+.wrong-answer{
+    background-color: rgb(242, 75, 75) !important;
+}
+.spaceship-bar{
+    width: 15px;
+    height: 550px;  
+    border-radius: 4px;
+    margin-right: 50px; 
+    background-color: rgba(254, 254, 254, 0.2);
+    display: flex;
+    align-items: flex-end;
+}
+.spaceship-traveled{
+    background-image: linear-gradient(yellow, orange, purple);
+    width: 15px;
+    height: 550px;
+    border-radius: 4px;
+    transform: scaleY(0);
+    transition: all 425ms ease-in-out;
+    transform-origin: bottom;
+}
+.spaceship{
+    width: 70px;
+    height: 80px;
+    position: absolute;
+    transition: all 425ms ease-in-out;
+    transform: translate(-27px, 0);
+}
+.spaceship img{
+    width: 100%;
+}
+.spaceship-fire{
+    position: absolute;
+    transform: translate(-70px, 0);
+    opacity: 0;
+}
+.invisible{
+    opacity: 0;
+}
+.wrecked{
+    position: absolute;
+    transform: translate(0, -108px); 
+
+}
+.explosion{
+    height: 70px;
+    width: 80px;
+    position: absolute;
+    transform: translate(0, -110px);
+}
+.explosion-image{
+   width: 100%;
+   transition: all 225ms ease-in;
+
+}
+.lost{
+    display: none;
+    position: fixed;
+    bottom: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-image: url(img/bg1.jpg);
+    background-size: cover;
+    cursor: pointer;
+}
+.lost-text{
+   height: 100%;
+   width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 70px;
+    color: white;
+}
+.lost-animation{
+      animation: 6000ms lost ease-out;
+      text-align: center;
+      animation-iteration-count: 1;
+      animation-fill-mode: forwards;
+}
+@keyframes lost {
+      from{
+          font-size: 70px;
+      }
+      to{
+          font-size: 0px;
+      }
+}
+
+.won{
+    position: fixed;
+    display: none;
+    bottom: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-image: url(img/bg2.jpg);
+    background-size: cover;
+}
+.won-text{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 70px;
+    color: white;
+    text-align: center;
+}
+.won-text button{
+      border: 3px solid white;
+      color: white;
+      border-radius: 10px;
+      width: 150px;
+      height: 50px;
+      background-color: transparent;
+      cursor: pointer;
+      font-size: 22px;
+      margin-top: 30px;
+  
+}
+.won-text button:hover{
+      background-color: rgba(255, 255, 255, 0.4);
+}
+.won-animation{
+      animation: 5200ms won ease-out;
+      animation-fill-mode: forwards;
+}
+@keyframes won {
+      from{
+          background-color: rgba(255, 255, 255, 1);
+      }
+      to{
+          background-color: rgba(255, 255, 255, 0);
+      }
+} 
+.attributes{
+    color: white;
+    font-size: 8px;
+    position: fixed;
+    width: 250px;
+    bottom: 0;
+    top: 95%;
+    text-align: center;
+}
+.attributes a{
+    text-decoration: none;
+    color: white;
+}
+
+@media (max-width: 650px){
+    h1{
+        font-size: 35px;
+        margin-top: 5px;
+        margin-bottom: 5px;
+    }
+    h2{
+        font-size: 18px;
+    }
+    h4{
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+    .card{
+        width: 280px;
+        font-size: 12px;
+    }
+    .answer-button{
+        width: 220px;
+        height: 35px;
+    }
+    .card-footer{
+        width: 220px;
+    }
+    .lost-text{
+        font-size: 35px;
+    }
+    @keyframes lost {
+        from{
+            font-size: 35px;
+        }
+        to{
+            font-size: 0px;
+        }
+    }
+
+  }
+  @media (max-width: 450px){
+    .main-subcontainer{
+        margin-top: 70px;
+    }
+    .card{
+        width: 180px;
+        font-size: 12px;
+    }
+    .answer-button{
+        width: 120px;
+    }
+    .card-footer{
+        width: 120px;
+    }
+    .card-content{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    .answer-button{
+        width: 130px;
+        height: 50px;
+    }
+    h4{
+        width: 90%;
+    }
+  }
+
+
