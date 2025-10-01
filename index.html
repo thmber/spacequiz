@@ -21,26 +21,26 @@
             <div class="spaceship-bar">
                 <div class="spaceship-traveled" id="traveled">
                 </div>
-                <div class="spaceship" id="spaceship">
+                <section class="spaceship" id="spaceship">
                     <img src="icon/spaceship.png" id="intact" alt="">
                     <img class="spaceship-fire" id="fire" src="icon/spaceship-fire.png" alt="">
                     <div class="explosion invisible" id="explosion">
                         <img class="explosion-image" id="explosion-image" src="icon/explosion_small.png" alt="">
                     </div>
-                </div>
+                </section>
             </div>
 
-            <div class="card" id="card">
+            <main class="card" id="card">
                     <div class="card-image">
                         <img src="img/earth.jpg" alt="">
                     </div>
                     <div id="card-content" class="card-content">
                     </div>
-            </div>
+            </main>
         </div>
 
 <!--- -------------------------- Start Screen ----------------------------------- -->
-        <div id="start" class="start" onclick="startGame()">
+        <section id="start" class="start" onclick="startGame()">
             <div id="start-text" class="start-text">
                 <h1>Space Quiz</h1>
                 <h2>Answer all questions to return home!</h2>
@@ -48,7 +48,7 @@
                     <a href="https://www.flaticon.com/free-icons/spaceship" title="spaceship icons">Spaceship icons created by DinosoftLabs - Flaticon</a>
                 </div>
             </div>
-        </div>
+        </section>
 
 <!--- -------------------------- End Screen if game is lost -------------- -->
         <div id="lost" class="lost" onclick="playAgain('lost')">
