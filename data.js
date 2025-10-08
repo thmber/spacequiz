@@ -157,7 +157,12 @@ let allQuestions = [
     "answer_3": "Der Bruder von Gotthold Lessing",
     "answer_4": "Ein dänischer Sänger",
     "solution": 1
+    },
+    {"question": "Was ist was?",
+    "answer_1": "Wer wer ist",
+    "answer_2": "Wo was ist",
+    "answer_3": "Was warum ist",
+    "answer_4": "Diese Frage ergibt keinen Sinn",
+    "solution": 4
     }
-
-
 ]

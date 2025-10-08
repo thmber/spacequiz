@@ -269,6 +269,11 @@ h4{
 }
 
 @media (max-width: 650px){
+    .answer-button{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
     h1{
         font-size: 35px;
         margin-top: 5px;
@@ -303,6 +308,12 @@ h4{
             font-size: 0px;
         }
     }
+        .card-content{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
 
   }
   @media (max-width: 450px){
@@ -318,12 +329,6 @@ h4{
     }
     .card-footer{
         width: 120px;
-    }
-    .card-content{
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
     }
     .answer-button{
         width: 130px;
