@@ -10,6 +10,7 @@ let travelingSound = new Audio('audio/traveling.wav')
 let startSound = new Audio('audio/start.wav')
 let allSounds = [rainSound, correctSound, travelingSound, explosionSound, startSound]
 let soundOn = true;
+let languageIsEnglish = true;
 
 function chooseDifficulty(number) {
     numberOfQuestions = number;
@@ -173,6 +174,18 @@ function toggleSound(muteOrUnmute){
     for (let i = 0; i < allSounds.length; i++) {
         let sound = allSounds[i];
         sound.volume = muteOrUnmute;
+    }
+}
+
+function changeLanguage(){
+    if(languageIsEnglish){
+        languageIsEnglish = false;
+        document.getElementById('language-icon').innerHTML = 'DE'
+    }
+    else{
+        languageIsEnglish = true;
+        document.getElementById('language-icon').innerHTML = 'EN'
+
     }
 }
 ///////////////// render HTML-functions /////////////////////////////////////////////////////////////////////
