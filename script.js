@@ -3,7 +3,10 @@ let questions = [];
 let questionsList = [];
 let count = 0;
 let rightAnswers = 0;
-
+let explosion = new Audio('audio/explosion.wav');
+let correctSound = new Audio('audio/correct.wav');
+let rainSound = new Audio('audio/rain.wav')
+let travelingSound = new Audio('audio/traveling.wav')
 function chooseDifficulty(number) {
     numberOfQuestions = number;
     chooseQuestions(count);
@@ -58,6 +61,8 @@ function nextQuestion(){
 
 function answer(answer, q){
     if (answer == questions[count]['solution']) {
+        correctSound.play();
+        travelingSound.play();
         document.getElementById(`a${answer}`).classList.add('right-answer');
         rightAnswers++;
         travel();
@@ -68,6 +73,7 @@ function answer(answer, q){
     else{
         document.getElementById(`a${answer}`).classList.add('wrong-answer');
         explode()
+        explosion.play();
         setTimeout(() => {
                 end('lost');
             }, 300);
@@ -101,6 +107,9 @@ function end(wonorlost){
     if (wonorlost == 'lost'){
         showPlayAgain();
     }
+    if (wonorlost == 'won'){
+        rainSound.play();
+    }
 }
 
 
@@ -114,6 +123,7 @@ function showPlayAgain(){
 
 function playAgain(wonorlost){
     hide (wonorlost);
+    rainSound.pause();
     document.getElementById(`${wonorlost}-text`).classList.remove(`${wonorlost}-animation`);
     reset();
     startGame()
