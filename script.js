@@ -12,7 +12,7 @@ function chooseDifficulty(number) {
 
 function show(id){
     let idv = document.getElementById(`${id}`);
-    idv.style.display = "unset";
+    idv.style.display = "flex";
 }   
 
 
@@ -73,7 +73,6 @@ function answer(answer, q){
             }, 300);
     }   
 }
-
 setInterval(() => {
     
 }, 30);
@@ -99,8 +98,19 @@ function end(wonorlost){
     traveled.style.transform = `scaleY(0)`;
     let spaceship = document.getElementById('spaceship');
     spaceship.style.transform = `translate(-27px, 0)`; 
+    if (wonorlost == 'lost'){
+        showPlayAgain();
+    }
 }
 
+
+function showPlayAgain(){
+    setTimeout(() => {
+        document.getElementById('lost-text').classList.remove('lost-animation')
+        document.getElementById('lost-text').style.fontSize = '44px';
+        document.getElementById('lost-text').innerHTML = `<div class="play-again" onclick="playAgain('lost')">Play Again?</div>`;
+    }, 3000);
+}
 
 function playAgain(wonorlost){
     hide (wonorlost);
@@ -117,6 +127,8 @@ function reset(){
     let exp = document.getElementById('explosion-image');
     exp.style.transform = "scale(1)";
     document.getElementById('explosion').classList.add('invisible');
+    document.getElementById('lost-text').innerHTML = 'Lost in Space';
+
 }
 
 

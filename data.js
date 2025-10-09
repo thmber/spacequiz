@@ -164,5 +164,12 @@ let allQuestions = [
     "answer_3": "Was warum ist",
     "answer_4": "Diese Frage ergibt keinen Sinn",
     "solution": 4
+    },
+     {"question": "Was bedeutet das D in D-Zug?",
+    "answer_1": "Deutlich schnellerer Zug",
+    "answer_2": "Durchgangs-Zug",
+    "answer_3": "Dusch-Zug",
+    "answer_4": "Dummer Zug",
+    "solution": 2
     }
 ]
