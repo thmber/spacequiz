@@ -38,11 +38,11 @@ function explode(){
 
 
 function chooseQuestions(){
-       for (let i = 0; i < allQuestions.length; i++) {
-        questionsList.push(allQuestions[i]);
+       for (let i = 0; i < allQuestionsEnglish.length; i++) {
+        questionsList.push(allQuestionsEnglish[i]);
        }
     for (let i = 0; i < numberOfQuestions; i++) {
-        let random = Math.floor(Math.random() * (allQuestions.length-i));
+        let random = Math.floor(Math.random() * (allQuestionsEnglish.length-i));
         questions.push(questionsList[random]);
         questionsList.splice(random, 1);
     }
