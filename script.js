@@ -128,6 +128,12 @@ function end(wonorlost){
     }
     if (wonorlost == 'won'){
         rainSound.play();
+        if (languageIsEnglish) {
+            document.getElementById('won-text').innerHTML = `you made it home<button onclick="playAgain('won')" id="play-again-won">play again?</button>`;
+        }
+        else{
+            document.getElementById('won-text').innerHTML = `nach Hause geschafft <button onclick="playAgain('won')" id="play-again-won">nochmal?</button>`;
+        }
     }
 }
 
@@ -136,7 +142,12 @@ function showPlayAgain(){
     setTimeout(() => {
         document.getElementById('lost-text').classList.remove('lost-animation')
         document.getElementById('lost-text').style.fontSize = '44px';
-        document.getElementById('lost-text').innerHTML = `<div class="play-again" onclick="playAgain('lost')">Play Again?</div>`;
+        if (languageIsEnglish) {
+            document.getElementById('lost-text').innerHTML = `<div class="play-again" onclick="playAgain('lost')">Play Again?</div>`;
+        }   
+        else{
+            document.getElementById('lost-text').innerHTML = `<div class="play-again" onclick="playAgain('lost')">Nochmal?</div>`;
+        }
     }, 3000);
 }
 
@@ -153,6 +164,7 @@ function reset(){
     count = 0;
     rightAnswers = 0;
     questions = [];
+    questionsList = [];
     let exp = document.getElementById('explosion-image');
     exp.style.transform = "scale(1)";
     document.getElementById('explosion').classList.add('invisible');
@@ -161,6 +173,8 @@ function reset(){
     document.getElementById('earth').style.opacity = 0;
     document.getElementById('language-icon').style.display = 'flex';
     languageIsEnglish = true;
+    document.getElementById('language-icon').innerHTML = 'EN';
+
 }
 
 function turnSoundOnOff(){
@@ -211,7 +225,7 @@ function startGame(){
 function changeCardContentLanguage(){
     if (languageIsEnglish) {
          let cardContent = document.getElementById('card-content');
-    cardContent.innerHTML = `
+            cardContent.innerHTML = `
          <h4>Choose diffiulty</h4>
          <div class="answer-button" onclick="chooseDifficulty(3)">
             easy (3 questions)
