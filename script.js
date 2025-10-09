@@ -7,11 +7,14 @@ let explosionSound = new Audio('audio/explosion.wav');
 let correctSound = new Audio('audio/correct.wav');
 let rainSound = new Audio('audio/rain.wav')
 let travelingSound = new Audio('audio/traveling.wav')
-let allSounds = [rainSound, correctSound, travelingSound, explosionSound]
+let startSound = new Audio('audio/start.wav')
+let allSounds = [rainSound, correctSound, travelingSound, explosionSound, startSound]
 let soundOn = true;
 
 function chooseDifficulty(number) {
     numberOfQuestions = number;
+    startSound.currentTime = 0;
+    startSound.play();
     chooseQuestions(count);
 }
 
@@ -92,6 +95,9 @@ function travel(){
      let miles = rightAnswers / numberOfQuestions;
      traveled.style.transform = `scaleY(${miles})`;
      let spacemiles = miles * 500;
+     let earthCloser = 1 - miles;
+     document.getElementById('earth').style.filter = `grayscale(${earthCloser})`;
+     document.getElementById('earth').style.opacity = `${miles}`;
      let spaceship = document.getElementById('spaceship');
      spaceship.style.transform = `translate(-27px, -${spacemiles}px)`;
      document.getElementById('fire').style.opacity = "1";
@@ -102,6 +108,7 @@ function travel(){
 
 function end(wonorlost){   
     show (wonorlost);
+    startSound.pause();
     document.getElementById(`${wonorlost}-text`).classList.add(`${wonorlost}-animation`);
     let traveled = document.getElementById('traveled');
     traveled.style.transform = `scaleY(0)`;
@@ -141,6 +148,10 @@ function reset(){
     exp.style.transform = "scale(1)";
     document.getElementById('explosion').classList.add('invisible');
     document.getElementById('lost-text').innerHTML = 'Lost in Space';
+    document.getElementById('earth').style.filter = `grayscale(1)`;
+    document.getElementById('earth').style.opacity = 0;
+
+
 
 }
 

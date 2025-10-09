@@ -178,5 +178,12 @@ let allQuestions = [
     "answer_3": "Mit einem Iphone",
     "answer_4": "13. Januar 1979",
     "solution": 2
+    },
+     {"question": "Wie heiß kann es auf dem Merkur werden?",
+    "answer_1": "bis zu 43° Celsius",
+    "answer_2": "bis zu 143° Celsius",
+    "answer_3": "bis zu 430° Celsius",
+    "answer_4": "bis zu 4300° Celsius",
+    "solution": 3
     }
 ]

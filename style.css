@@ -32,13 +32,19 @@ h2{
 }
 h3{
     font-size: 22px;
+}
+.start-game-text{
     cursor: pointer;
 }
-h3:hover{
-    color: rgb(42, 120, 146);
+.start-game-text:hover{
+    color: rgb(73, 156, 184);
 }
 h4{
     text-decoration: underline;
+}
+.start-box{
+    display: flex;
+    gap: 10px;
 }
 @font-face {
     font-family: roboto;
@@ -158,13 +164,17 @@ h4{
 .earth-icon{
     position: absolute;
     left: -24px;
-    top: -24px;
+    top: -48px;
     width: 64px;
+    border-radius: 100%;
+    box-shadow: 4px 4px 10px rgb(33, 32, 32);
+    filter: grayscale(1);
+    opacity: 0;
 }
 .sound-icon{
     position: absolute;
-    right: 20px;
-    top: 20px;
+    right: 16px;
+    top: 16px;
     width: 24px;
     cursor: pointer;
 }
