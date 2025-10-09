@@ -3,10 +3,13 @@ let questions = [];
 let questionsList = [];
 let count = 0;
 let rightAnswers = 0;
-let explosion = new Audio('audio/explosion.wav');
+let explosionSound = new Audio('audio/explosion.wav');
 let correctSound = new Audio('audio/correct.wav');
 let rainSound = new Audio('audio/rain.wav')
 let travelingSound = new Audio('audio/traveling.wav')
+let allSounds = [rainSound, correctSound, travelingSound, explosionSound]
+let soundOn = true;
+
 function chooseDifficulty(number) {
     numberOfQuestions = number;
     chooseQuestions(count);
@@ -73,7 +76,7 @@ function answer(answer, q){
     else{
         document.getElementById(`a${answer}`).classList.add('wrong-answer');
         explode()
-        explosion.play();
+        explosionSound.play();
         setTimeout(() => {
                 end('lost');
             }, 300);
@@ -141,7 +144,26 @@ function reset(){
 
 }
 
+function turnSoundOnOff(){
+    if (soundOn) {
+        soundOn = false;
+        document.getElementById('sound-on-off').src = "icon/sound-off.png"
+        toggleSound(0);
+    }
+    else{
+        soundOn = true;
+        document.getElementById('sound-on-off').src = "icon/sound.png"
+        toggleSound(1);
 
+    }
+}
+
+function toggleSound(muteOrUnmute){
+    for (let i = 0; i < allSounds.length; i++) {
+        let sound = allSounds[i];
+        sound.volume = muteOrUnmute;
+    }
+}
 ///////////////// render HTML-functions /////////////////////////////////////////////////////////////////////
 
 

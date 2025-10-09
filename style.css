@@ -161,6 +161,16 @@ h4{
     top: -24px;
     width: 64px;
 }
+.sound-icon{
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    width: 24px;
+    cursor: pointer;
+}
+.sound-icon:hover{
+    filter: invert(0.2);
+}
 .spaceship img{
     width: 100%;
 }
