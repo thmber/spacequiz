@@ -91,6 +91,7 @@ h4{
 }
 .card-image{
     width: 100%;
+    object-fit: contain;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
     overflow: hidden;
@@ -98,7 +99,7 @@ h4{
 
 }
 .card-image img{
-    width: 100%;
+    animation: closer 320s ease-out;
 }
 .card-footer{
     display: flex;
@@ -268,6 +269,14 @@ h4{
       }
       to{
           background-color: rgba(255, 255, 255, 0);
+      }
+} 
+@keyframes closer {
+      from{
+         width: 100%;
+      }
+      to{
+         width: 120%;
       }
 } 
 .attributes{

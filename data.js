@@ -171,5 +171,12 @@ let allQuestions = [
     "answer_3": "Dusch-Zug",
     "answer_4": "Dummer Zug",
     "solution": 2
+    },
+    {"question": "Wann wurde Samsung gegründet?",
+    "answer_1": "13. Januar 1969",
+    "answer_2": "Samsung gibt es nicht",
+    "answer_3": "Mit einem Iphone",
+    "answer_4": "13. Januar 1979",
+    "solution": 2
     }
 ]
