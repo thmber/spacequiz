@@ -95,6 +95,10 @@ function travel(){
 function end(wonorlost){   
     show (wonorlost);
     document.getElementById(`${wonorlost}-text`).classList.add(`${wonorlost}-animation`);
+    let traveled = document.getElementById('traveled');
+    traveled.style.transform = `scaleY(0)`;
+    let spaceship = document.getElementById('spaceship');
+    spaceship.style.transform = `translate(-27px, 0)`; 
 }
 
 
@@ -113,10 +117,6 @@ function reset(){
     let exp = document.getElementById('explosion-image');
     exp.style.transform = "scale(1)";
     document.getElementById('explosion').classList.add('invisible');
-    let traveled = document.getElementById('traveled');
-    traveled.style.transform = `scaleY(0)`;
-    let spaceship = document.getElementById('spaceship');
-    spaceship.style.transform = `translate(-27px, 0)`; 
 }
 
 
@@ -126,6 +126,7 @@ function reset(){
 function startGame(){
     hide ('start');
     hide ('attributes');
+    document.getElementById('main-sub').style.display = "flex";
     let cardContent = document.getElementById('card-content');
     cardContent.innerHTML = `
          <h4>Choose diffiulty</h4>

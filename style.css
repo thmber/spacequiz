@@ -3,12 +3,13 @@ body{
     background-size: cover;
     min-height: 100vh;
     font-family: space;
+    margin: 0;
 }
 .main{
     display: flex;
     align-items: center;
-    justify-content: flex-start;
-    height: 100%;
+    justify-content: center;
+    height: 100vh;
     flex-direction: column;
    
 }
@@ -40,7 +41,7 @@ h4{
 .main-subcontainer{
     display: flex;
     align-items: flex-end;
-    margin-top: 70px;
+    display: none;
 }
 .start{
     display: none;
@@ -49,7 +50,6 @@ h4{
     top: 0;
     left: 0;
     right: 0;
-    background-image: url(img/bg1.jpg);
     background-size: cover;
     cursor: pointer;
 }
