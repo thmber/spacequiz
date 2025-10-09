@@ -177,7 +177,7 @@ let allQuestions = [
     "answer_2": "Samsung gibt es nicht",
     "answer_3": "Mit einem Iphone",
     "answer_4": "13. Januar 1979",
-    "solution": 2
+    "solution": 1
     },
      {"question": "Wie heiß kann es auf dem Merkur werden?",
     "answer_1": "bis zu 43° Celsius",
@@ -375,7 +375,7 @@ let allQuestionsEnglish = [
   {
     "question": "What does the D in D-Zug stand for?",
     "answer_1": "Much faster train",
-    "answer_2": "Through train",
+    "answer_2": "Duchgangs-Zug",
     "answer_3": "Shower train",
     "answer_4": "Stupid train",
     "solution": 2
@@ -386,7 +386,7 @@ let allQuestionsEnglish = [
     "answer_2": "Samsung doesn’t exist",
     "answer_3": "With an iPhone",
     "answer_4": "January 13, 1979",
-    "solution": 2
+    "solution": 1
   },
   {
     "question": "How hot can it get on Mercury?",

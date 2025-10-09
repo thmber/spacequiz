@@ -39,14 +39,22 @@ function explode(){
 
 
 function chooseQuestions(){
+    if (languageIsEnglish) {
        for (let i = 0; i < allQuestionsEnglish.length; i++) {
         questionsList.push(allQuestionsEnglish[i]);
        }
+    }
+    else{
+         for (let i = 0; i < allQuestions.length; i++) {
+        questionsList.push(allQuestions[i]);
+       }
+    }
     for (let i = 0; i < numberOfQuestions; i++) {
         let random = Math.floor(Math.random() * (allQuestionsEnglish.length-i));
         questions.push(questionsList[random]);
         questionsList.splice(random, 1);
     }
+    document.getElementById('language-icon').style.display = 'none';
     render(count);
 }
 
@@ -151,9 +159,8 @@ function reset(){
     document.getElementById('lost-text').innerHTML = 'Lost in Space';
     document.getElementById('earth').style.filter = `grayscale(1)`;
     document.getElementById('earth').style.opacity = 0;
-
-
-
+    document.getElementById('language-icon').style.display = 'flex';
+    languageIsEnglish = true;
 }
 
 function turnSoundOnOff(){
@@ -181,10 +188,12 @@ function changeLanguage(){
     if(languageIsEnglish){
         languageIsEnglish = false;
         document.getElementById('language-icon').innerHTML = 'DE'
+        changeCardContentLanguage();
     }
     else{
         languageIsEnglish = true;
         document.getElementById('language-icon').innerHTML = 'EN'
+        changeCardContentLanguage();
 
     }
 }
@@ -195,7 +204,13 @@ function startGame(){
     hide ('start');
     hide ('attributes');
     document.getElementById('main-sub').style.display = "flex";
-    let cardContent = document.getElementById('card-content');
+    changeCardContentLanguage();
+}
+
+
+function changeCardContentLanguage(){
+    if (languageIsEnglish) {
+         let cardContent = document.getElementById('card-content');
     cardContent.innerHTML = `
          <h4>Choose diffiulty</h4>
          <div class="answer-button" onclick="chooseDifficulty(3)">
@@ -210,9 +225,27 @@ function startGame(){
          <div class="answer-button" onclick="chooseDifficulty(15)">
             extreme (15 questions)
          </div>
-        `;    
+        `; 
+    }
+    else{
+        let cardContent = document.getElementById('card-content');
+        cardContent.innerHTML = `
+         <h4>Schwieriegkeitsgrad</h4>
+         <div class="answer-button" onclick="chooseDifficulty(3)">
+            einfach (3 Fragen)
+         </div>
+         <div class="answer-button" onclick="chooseDifficulty(6)">
+            normal (6 Fragen)
+         </div>
+         <div class="answer-button" onclick="chooseDifficulty(9)">
+            schwer (9 Fragen)
+         </div>
+         <div class="answer-button" onclick="chooseDifficulty(15)">
+            extrem (15 Fragen)
+         </div>
+        `;  
+    }
 }
-
 
 function render(q){
     let cardContent = document.getElementById('card-content');

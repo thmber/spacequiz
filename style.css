@@ -41,6 +41,7 @@ h3{
 }
 h4{
     text-decoration: underline;
+    text-align: center;
 }
 .start-box{
     display: flex;
@@ -182,6 +183,7 @@ h4{
     filter: invert(0.2);
 }
 .language-icon{
+    display: flex;
     color: white;
     position: absolute;
     left: 75px;
