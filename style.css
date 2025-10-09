@@ -42,6 +42,7 @@ h4{
     display: flex;
     align-items: flex-end;
     display: none;
+    position: relative;
 }
 .start{
     display: none;
@@ -143,6 +144,12 @@ h4{
     position: absolute;
     transition: all 425ms ease-in-out;
     transform: translate(-27px, 0);
+}
+.earth-icon{
+    position: absolute;
+    left: -24px;
+    top: -24px;
+    width: 64px;
 }
 .spaceship img{
     width: 100%;
