@@ -324,9 +324,9 @@ h4{
     font-size: 8px;
     position: fixed;
     width: 250px;
-    bottom: 0;
-    top: 95%;
+    bottom: 16px;
     text-align: center;
+
 }
 .attributes a{
     text-decoration: none;
